@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Exercise</title>
+    <style>
+        /* input:invalid{
+            border: red solid 4px;
+        }
+        input,
+        input:valid {
+            color:green;
+        } */
+
+        table, th, td {
+        border: 1px solid black;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>เข้าสู่ระบบ</h1>
+    <form action="Login.html">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">กรุณาพิมพ์ตามตัวเลขที่ปรากฎ: 1559 <br><input type="text" required pattern="(1559)"></td>
+            </tr>
+        </table>
+        <button type="submit" formaction="Login.html"><img src="login.png" >
+    
+    </form>
+        
+
+</body>
+</html>

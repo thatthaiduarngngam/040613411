@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2ข้อ4</title>
+    <style>
+        input:invalid{
+            border: red solid 4px;
+        }
+        input,
+        input:valid {
+            color:green;
+        }
+
+  </style>
+</head>
+<body>
+    <form action="form-echo.php" method="post">
+        <h2>1. กรอกชื่อด้วยภาษอังกฤษ อักขระตัวใหญ่เท่านั้น</h2>
+        <input type="text" name="englishName" pattern="[A-Z]+" title="Please enter your English name in uppercase characters only." required>
+        <br>
+
+        <h2>2. รหัสนักศึกษา มีคั่น - เช่น 61-040626-1234-5 </h2>
+        <div>
+            <input type="text" name="StudentID" pattern="^[0-9]{2}-(040626)(.*[0-9]{4}(-))[0-9]{1}" required>
+        </div>
+        <br>
+
+        <h2>3. บ้านเลขที่ เช่น 235/4 หรือ 69</h2>
+        <input type="text" name="houseNumber" pattern="[0-9]+(/[0-9]+)?" title="Please enter your house number, e.g., 269/4 or 69." required>
+        <br>
+
+        <h2>4. รหัสสินค้า 3 ตัวแรกเป็นอักขระตัวใหญ่ตามด้วยเลข 2 ตัว</h2>
+        <input type="text" name="productCode" pattern="[A-Z]{3}[0-9]{2}" title="Please enter the product code in the format of 3 capital letters followed by 2 numbers." required>
+        <br>
+
+        <h2>5. กรุณากรอกชื่อภาษาไทยเท่านั้น</h2>
+        <input type="text" name="thaiName" pattern="[ก-๙]+" title="กรุณากรอกชื่อภาษาไทยเท่านั้น" required>
+        <br>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</body>
+</html>
