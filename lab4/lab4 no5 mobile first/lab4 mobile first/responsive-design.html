@@ -6,60 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <style>
-    @media (max-width: 768px){
-        .product{
+    .flexible {
         width: fit-content;
         margin: 0 auto;
-        }
-
-        .botton{
-            background-color: blue;
-            color: white;
-            border-radius: 0.5rem;
-            padding: 10px;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-        }
-    }
-    .product{
-        width: fit-content;
-        margin: 0 auto;
-    }
-    .content{
-        margin: 0 auto;
-        background-color: rgb(190, 190, 190);
-        padding: 50px;
-    }
-    .flexible{
         display: flex;
         flex-wrap: wrap;
-        margin: 0 auto;
-    }
 
-    .wrap{
-        width: 100%;
+      }
+      .content{
+        width: fit-content;
+        background-color: rgb(173, 173, 173);
+        padding: 20px;
+
+      }
+      .botton {
+        display: flex;
+        align-items: center;
         text-align: center;
-    }
+        margin: 10px auto;
+        padding: 0.5rem 2rem;
+        background-color: blue;
+        border-radius: 8px;
+        width: fit-content;
+        color: #fff;
 
-    a{
-        display: inline-block;
-    }
+      }
+      .botton::before{
+        content: url(fonts/cart-shopping-solid.svg);
+        color: #fff;
+        width: 1rem ;
+        height: 1rem;
+      }
 
-    .botton{    
-            background-color: blue;
-            color: white;
-            border-radius: 0.5rem;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    }
-    .botton::before{
-        content: url("fonts/cart-shopping-solid.svg");
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+      a {
+        text-decoration: none;
+      }
+      @media only screen and (max-width: 768px) {
+        .product{
+            margin: 0 auto;
+        }
+        .content{
+            padding: 20px;
+            margin: 10px 10px;
+        }
+        .botton {
+        text-align: center;
+        align-items: center;
+        justify-content:center ;
+        margin: 0px auto;
+        padding: 8px;
+        border-radius: 8px;
+        width: 90%;
+        color: #fff;
+      }
+      }
 </style>
 <body>
     <div class="flexible">
