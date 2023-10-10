@@ -19,6 +19,8 @@
        echo "ราคา: " . $row ["price"] . " บาท <br>";
        echo "<hr>\n";
    }
+   
 ?>
+
 </body>
 </html>

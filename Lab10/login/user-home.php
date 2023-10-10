@@ -18,20 +18,21 @@
 
     <?php 
            $user = $_SESSION['username'];
-           $stmt = $pdo->prepare("SELECT *, SUM(price) AS totalprice, COUNT(quantity) AS totalquantity FROM orders 
+           $stmt = $pdo->prepare("SELECT *, price * quantity AS total_price, quantity FROM orders 
            INNER JOIN member ON member.username = orders.username INNER JOIN item ON item.ord_id = orders.ord_id 
-           INNER JOIN product ON product.pid = item.pid WHERE member.username = ? GROUP BY product.pname;");
+           INNER JOIN product ON product.pid = item.pid WHERE member.username = ?");
            $stmt->bindParam(1, $user);
            $stmt->execute();
         
            while ($row = $stmt->fetch()) {
                echo "ชื่อสินค้า: " . $row ["pname"] . "<br>";
-               echo "ราคา: " . $row ["totalprice"] . " บาท <br>";
-               echo "จำนวน: " . $row ["totalquantity"] . " ชิ้น <br>";
+               echo "ราคา: " . $row ["total_price"] . " บาท <br>";
+               echo "จำนวน: " . $row ["quantity"] . " ชิ้น <br>";
                echo "สั่งซื้อเมื่อ:" . $row["ord_date"] . "<br>";
                echo "<hr>\n";
            }
     
     ?>
+    6404062610081 ธัชไธย์ ดวงงาม
 </body>
 </html>

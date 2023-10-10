@@ -22,7 +22,7 @@
     ?>
     นี่คือ Order ของผู้ใช้ <?php echo $user ?> <br>
     <?php
-           $stmt = $pdo->prepare("SELECT member.username, product.pname, price, quantity
+           $stmt = $pdo->prepare("SELECT member.username, product.pname, price * quantity AS total_price, quantity
            FROM orders
            INNER JOIN member ON member.username = orders.username
            INNER JOIN item ON item.ord_id = orders.ord_id
@@ -34,11 +34,12 @@
         
            while ($row = $stmt->fetch()) {
                echo "ชื่อสินค้า: " . $row ["pname"] . "<br>";
-               echo "ราคา: " . $row ["price"] . " บาท <br>";
+               echo "ราคา: " . $row ["total_price"] . " บาท <br>";
                echo "จำนวน: " . $row ["quantity"] . " ชิ้น <br>";
                echo "<hr>\n";
            }
     
     ?>
+    6404062610081 ธัชไธย์ ดวงงาม
 </body>
 </html>
