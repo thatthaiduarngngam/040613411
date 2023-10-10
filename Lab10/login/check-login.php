@@ -19,10 +19,12 @@
 
     if($row['role'] == 'user'){
       // แสดง link เพื่อไปยังหน้าต่อไปหลังจากตรวจสอบสำเร็จแล้ว
+      $_SESSION['user'] = $row['role'];
       echo "เข้าสู่ระบบสำเร็จ<br>";
       echo "<a href='user-home.php'>ไปยังหน้าหลักของผู้ใช้</a>"; 
     }
     elseif($row['role'] == 'admin'){
+      $_SESSION['admin'] = $row['role'];
       echo "ยินดีต้อนรับ Admin<br>";
       echo "<a href='admin-home.php'>ไปยังหน้าหลักของ Admin</a>"; 
     }

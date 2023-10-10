@@ -3,6 +3,10 @@
     // ตรวจสอบว่ามีชื่อใน session หรือไม่ หากไม่มีให้ไปหน้า login อัตโนมัติ
     if (empty($_SESSION["username"]) ) { 
         header("location: login-form.php");
+
+    }
+    else if(isset($_SESSION['user'])){
+        header("location: user-home.php");
     }
     ?>
 
@@ -29,9 +33,11 @@
                echo "จำนวนออเดอร์: <a href='view_order.php?username=" . $row['username'] . "'>" . $row['ordercount'] . "</a> ออเดอร์ <br>";
                echo "ยอดรวมทุกออเดอร์: " . $row ["totalprice"] . " บาท <br>";
                echo "<hr>\n";
-           }
-           
+           }    
     ?>
+    <h3>ตรวจดูสินค้าคงเหลือ <a href="inventory.php">ที่นี่</a></h3>
+    
+    <hr>
     
     6404062610081 ธัชไธย์ ดวงงาม
 </body>
