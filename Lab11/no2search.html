@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        var xmlHttp;
+
+        function send() {
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = showResult;
+
+            var username = document.getElementById("username").value;
+
+            var url = "no2.php?username=" + username;
+
+            xmlHttp.open("GET", url);
+            xmlHttp.send();
+        }
+        function showResult() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                document.getElementById("result").innerHTML = xmlHttp.responseText;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>ค้นหาข้อมูลสมาชิกจากตาราง member</h1><br>
+    <br>
+    <input type="input" id="username" onkeyup="send()"><br><br>
+    <div id="result"></div>
+</body>
+
+</html>
